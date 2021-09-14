@@ -12,9 +12,9 @@ function myFunction(item) {
   var li = document.createElement("li");
   var a = document.createElement("a")
   var label = document.createTextNode(item.label)
-  var url = document.createTextNode(item.url)
   li.appendChild(a);
-  a.appendChild(label)
-  a.appendChild(url)
+  a.appendChild(label);
+  a.title = label;
+  a.href = item.url;
   document.getElementById("link-list").appendChild(li);
 }
