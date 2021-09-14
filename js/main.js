@@ -6,11 +6,15 @@ const links = [
 ]
 
 let text = "";
-const fruits = ["apple", "orange", "cherry"];
-fruits.forEach(myFunction);
+links.forEach(myFunction);
 
-document.getElementById("demo").innerHTML = text;
-
-function myFunction(item, index) {
-  text += index + ": " + item + "<br>";
+function myFunction(item) {
+  var li = document.createElement("li");
+  var a = document.createElement("a")
+  var label = document.createTextNode(item.label)
+  var url = document.createTextNode(item.url)
+  li.appendChild(a);
+  a.appendChild(label)
+  a.appendChild(url)
+  document.getElementById("link-list").appendChild(li);
 }
